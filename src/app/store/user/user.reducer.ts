@@ -1,6 +1,6 @@
 import { createReducer, on } from '@ngrx/store';
 import { IUser } from '../../interfaces';
-import { updateUser } from './user.actions';
+import { updateName, updateUser } from './user.actions';
 
 const INITIAL_STATE: IUser = {
   name: '',
@@ -9,5 +9,6 @@ const INITIAL_STATE: IUser = {
 
 export const userReducer = createReducer(
   INITIAL_STATE,
-  on(updateUser, (state, { name, email }) => ({ name, email }))
+  on(updateUser, (state, { name, email }) => ({ name, email })),
+  on(updateName, (state, { name }) => ({ ...state, name }))
 );

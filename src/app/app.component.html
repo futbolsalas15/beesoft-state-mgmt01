@@ -1,4 +1,5 @@
-<hello name="{{ name }}"></hello>
 <p>
-  Start editing to see some magic happen :)
+  Hello, {{name$ | async}}
 </p>
+
+<button (click)="updateName()">Update Name</button>
